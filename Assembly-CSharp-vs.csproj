@@ -46,15 +46,15 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\scripts\Items and Projectiles\BulletSprite.cs" />
-     <Compile Include="Assets\scripts\Items and Projectiles\ItemSprite.cs" />
-     <Compile Include="Assets\scripts\Items and Projectiles\WallSprite.cs" />
-     <Compile Include="Assets\scripts\Main\Moveable.cs" />
-     <Compile Include="Assets\scripts\Sprites\ComputerSprite.cs" />
-     <Compile Include="Assets\scripts\Sprites\KeyMoveSprite.cs" />
-     <Compile Include="Assets\scripts\Sprites\NoStopSprite.cs" />
-     <Compile Include="Assets\scripts\Sprites\ShootySprite.cs" />
-     <Compile Include="Assets\scripts\Sprites\TrackingSprite.cs" />
+     <Compile Include="Assets\scripts\BulletSprite.cs" />
+     <Compile Include="Assets\scripts\ComputerSprite.cs" />
+     <Compile Include="Assets\scripts\ItemSprite.cs" />
+     <Compile Include="Assets\scripts\KeyMoveSprite.cs" />
+     <Compile Include="Assets\scripts\Moveable.cs" />
+     <Compile Include="Assets\scripts\NoStopSprite.cs" />
+     <Compile Include="Assets\scripts\ShootySprite.cs" />
+     <Compile Include="Assets\scripts\TrackingSprite.cs" />
+     <Compile Include="Assets\scripts\WallSprite.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
