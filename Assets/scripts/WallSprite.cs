@@ -3,15 +3,7 @@ using System.Collections;
 
 public class WallSprite : Moveable
 {
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+	new void OnCollisionEnter2D(Collision2D collision2D) {
+		base.OnCollisionEnter2D(collision2D);
+	}
 }

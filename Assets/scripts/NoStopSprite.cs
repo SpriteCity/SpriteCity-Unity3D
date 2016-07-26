@@ -7,14 +7,8 @@ public class NoStopSprite : Moveable
 
 	Vector2 previousDirection;
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
 	// FixedUpdate should be used instead of Update when dealing with Rigidbody
-	void FixedUpdate()
+	new void FixedUpdate()
 	{
 		Vector2 direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
@@ -30,5 +24,6 @@ public class NoStopSprite : Moveable
 
 		GetComponent<Rigidbody2D> ().velocity = velocity;
 
+		base.FixedUpdate ();
 	}
 }

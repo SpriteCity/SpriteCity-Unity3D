@@ -5,20 +5,8 @@ public class ItemSprite : Moveable
 {
 	public int healthIncrease = 1;
 	public int sizeIncrease = 2;
-	
-	// Use this for initialization
-	void Start()
-	{
-		
-	}
-	
-	// Update is called once per frame
-	void Update()
-	{
-		int test = 0;
-	}
 
-	void OnCollisionEnter2D(Collision2D collision2D) {
+	new void OnCollisionEnter2D(Collision2D collision2D) {
 		KeyMoveSprite keyMoveSprite = collision2D.collider.GetComponent<KeyMoveSprite> ();
 
 		if (keyMoveSprite != null) 
@@ -32,7 +20,9 @@ public class ItemSprite : Moveable
 		{			
 			computerSprite.transform.localScale *= 2;
 		}
-		
+
+		base.OnCollisionEnter2D (collision2D);
+
 		Destroy(gameObject);
 	}
 }

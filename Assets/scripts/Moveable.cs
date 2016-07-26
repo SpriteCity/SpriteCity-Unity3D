@@ -12,17 +12,27 @@ public class Moveable : MonoBehaviour
 	}
 	
 	// Use this for initialization
-	void Start()
+	protected void Start()
 	{
 
 	}
 	
 	// Update is called once per frame
-	void Update()
+	protected void Update()
 	{
-		//This doesn't work for some reason :(
 		if (health <= 0) {
 			Destroy(gameObject);
 		}
+	}
+
+	// FixedUpdate should be used instead of Update when dealing with Rigidbody
+	protected void FixedUpdate() 
+	{
+
+	}
+
+	protected void OnCollisionEnter2D(Collision2D collision2D)
+	{
+		
 	}
 }

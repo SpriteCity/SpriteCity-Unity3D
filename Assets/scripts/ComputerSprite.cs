@@ -8,21 +8,9 @@ public class ComputerSprite : Moveable
 	public float decisionInterval = 1; 
 
 	float lastDecision;
-	
-	// Use this for initialization
-	void Start()
-	{
 
-	}
-	
-	// Update is called once per frame
-	void Update()
-	{
-		
-	}
-	
 	// FixedUpdate should be used instead of Update when dealing with Rigidbody
-	void FixedUpdate()
+	new void FixedUpdate()
 	{
 		lastDecision += Time.deltaTime;
 
@@ -35,14 +23,18 @@ public class ComputerSprite : Moveable
 
 			lastDecision = 0;
 		}
+
+		base.FixedUpdate ();
 	}
 	
-	void OnCollisionEnter2D(Collision2D collision2D) {
+	new void OnCollisionEnter2D(Collision2D collision2D) {
 		KeyMoveSprite keyMoveSprite = collision2D.collider.GetComponent<KeyMoveSprite> ();
 		
 		if (keyMoveSprite != null) 
 		{			
 			keyMoveSprite.health -= damage;
 		}
+
+		base.OnCollisionEnter2D (collision2D);
 	}
 }

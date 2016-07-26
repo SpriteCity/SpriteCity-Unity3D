@@ -3,22 +3,30 @@ using System.Collections;
 
 public class BulletSprite : Moveable
 {
-    int directionX = 0;
-    int directionY = 0;
+	public void Initialize(Vector3 startPosition, Vector2 direction, float speed) {
+		gameObject.transform.position = startPosition;
 
-    // Use this for initialization
-    void Start()
-    {
+		Rigidbody2D rigidbody2D = gameObject.GetComponent<Rigidbody2D> ();
+		rigidbody2D.velocity = direction * speed;
+	}
 
-    }
-
-	void OnCollisionEnter2D(Collision2D collision2D) {
+	new void OnCollisionEnter2D(Collision2D collision2D) {
 		Moveable moveable = collision2D.collider.GetComponent<Moveable> ();
-		
-		if (moveable != null) 
-		{			
-			Destroy(moveable.gameObject);
-			Destroy(gameObject);
+		bool isMoveable = (moveable != null);
+
+		WallSprite wall = collision2D.collider.GetComponent<WallSprite> ();
+		bool isWall = (wall != null);
+
+		if (isWall) 
+		{
+			Destroy (gameObject);
 		}
+		else if (isMoveable) 
+		{
+			moveable.health = moveable.health - 1;
+			health = health - 1;
+		}
+
+		base.OnCollisionEnter2D (collision2D);
 	}
 }
