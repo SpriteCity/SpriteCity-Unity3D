@@ -5,12 +5,6 @@ public class Moveable : MonoBehaviour
 {
 	public int health = 1;
 
-	//Whats called when a drawable is created
-	public Moveable()
-	{
-
-	}
-	
 	// Use this for initialization
 	protected void Start()
 	{
